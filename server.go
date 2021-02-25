@@ -1,5 +1,5 @@
 package blockbase
 
-func a(b string) {
-  print (b)
+func Server(s string) string {
+	return s
 }
