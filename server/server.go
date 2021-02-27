@@ -31,6 +31,7 @@ func Server(adr string) {
 				}
 			}
 			if err == nil {
+				// to be proceed
 				fmt.Print(stringA)
 			}
 		}()
