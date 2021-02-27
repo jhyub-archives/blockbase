@@ -59,7 +59,7 @@ func RootCommand() {
 		os.Exit(0)
 	} else if opts.Version {
 		fmt.Println("Blockbase version v" + version)
-		fmt.Println("Created by timtertube@github.com. Maintained by organization blbase@github.com.")
+		fmt.Println("Created by timtermtube@github.com. Maintained by organization blbase@github.com.")
 		fmt.Println("Distributed as open-source under the MIT License.")
 		fmt.Println("View contributors: https://github.com/blbase/blockbase/graphs/contributors")
 		os.Exit(0)
