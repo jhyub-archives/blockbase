@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/jessevdk/go-flags"
 	"os"
+	"github.com/blbase/serve"
+	"github.com/jessevdk/go-flags"
 )
 
 type runOpts struct {
@@ -42,13 +43,16 @@ func main() {
 
 func RunCommand() {
 	if opts.Run.Help {
+		print(3)
 		PrintHelp("run")
 		os.Exit(0)
 	} else if opts.Run.Daemon {
+		print(2)
 		fmt.Println("Daemon not supported yet")
 		os.Exit(0)
 	} else {
 		// Do something
+		serve.Serve(":8080")
 		os.Exit(0)
 	}
 }
