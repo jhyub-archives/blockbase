@@ -44,7 +44,6 @@ func main() {
 
 func RunCommand() {
 	if opts.Run.Help {
-		print(3)
 		PrintHelp("run")
 		os.Exit(0)
 	} else if opts.Run.Daemon {
