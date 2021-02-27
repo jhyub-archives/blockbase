@@ -2,15 +2,16 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"github.com/blbase/serve"
 	"github.com/jessevdk/go-flags"
+	"os"
 )
 
 type runOpts struct {
-	Help   bool `short:"h" long:"help"`
-	Daemon bool `short:"d" long:"daemon"`
-	Port   int  `long:"port" default:"8080"`
+	Help   bool   `short:"h" long:"help"`
+	Daemon bool   `short:"d" long:"daemon"`
+	Port   int    `long:"port" default:"8080"`
+	Host   string `long:"host" default:"0.0.0.0"`
 }
 
 type rootOpts struct {
@@ -51,8 +52,7 @@ func RunCommand() {
 		fmt.Println("Daemon not supported yet")
 		os.Exit(0)
 	} else {
-		// Do something
-		serve.Serve(":8080")
+		serve.Serve(fmt.Sprintf("%s:%d", opts.Run.Host, opts.Run.Port))
 		os.Exit(0)
 	}
 }
@@ -95,5 +95,6 @@ func PrintHelp(subcommand string) {
 		fmt.Println("  -h, --help HELP         Display this message.")
 		fmt.Println("  -d, --daemon DAEMON     Run blockbase as daemon.")
 		fmt.Println("  --port PORT             Set port of blockbase. Default value is 8080")
+		fmt.Println("  --host HOST             Set hostname of blockbase. Default value is 0.0.0.0")
 	}
 }
