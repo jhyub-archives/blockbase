@@ -22,7 +22,7 @@ func Serve(adr string) {
 	if err != nil {
 		panic(err)
 	} else {
-		fmt.Printf("The BlockBase Server has started to blockbase://%v", adr)
+		fmt.Printf("The BlockBase Server has started to %s", adr)
 	}
 
 	for {
